@@ -227,7 +227,6 @@ h1 span {
   
 }
 
-
 .header-warp {
 
   max-width: 1613px;

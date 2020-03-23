@@ -30,6 +30,7 @@ if(isset($_POST['login'])){
         }
   }
 
+  
 //REGISTRATION PROCESS:  press this will be the process from file of login.php
 if(isset($_POST['submitregistrationdata'])){
         $firstname   = ucwords($_POST['userfirstname']);
