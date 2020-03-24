@@ -79,6 +79,7 @@ input{
       <div class="col-sm-10"><h1 class="labelforinput">My Profile</h1></div>
       
     </div>
+    
 
     <div class="row">
       <div class="col-sm-3"><!--left col-->
