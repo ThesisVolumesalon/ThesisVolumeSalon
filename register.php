@@ -9,8 +9,8 @@ $Error_Register = $_SESSION['error_register'];?>
 <title>Sign In</title>
   <link rel="stylesheet" href="css/style1.css">
   <link href="img/volume.png" rel="shortcut icon"/>
-  <link rel="stylesheet" href="registerDesign.css" />
-  <link rel="stylesheet" type="text/css" href="cssprocess.css">
+  <link rel="stylesheet" href="css/registerDesign.css" />
+  <link rel="stylesheet" type="text/css" href="css/cssprocess.css">
 </head>
 <body>
 	
