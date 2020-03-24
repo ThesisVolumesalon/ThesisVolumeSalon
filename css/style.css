@@ -27,7 +27,6 @@ body {
 	height: 100%;
 	font-family: 'Futura LT', sans-serif;
 	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
 	color: #403d3d;
 }
 
@@ -43,7 +42,6 @@ body {
 			color: #e22b63
 		}
 .logo {
-    background: #1b1b1b;
     text-align: center;
     float: left;
     display: inline-block;
@@ -1836,7 +1834,6 @@ p.squared {
 	text-align: center;
 	font-size: 15px;
 	color: #fff;
-	margin-top
 	padding: 10px 10px;
 	min-width: 10px;
 	border: 2px solid #e22b63;
