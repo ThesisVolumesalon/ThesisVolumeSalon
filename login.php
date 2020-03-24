@@ -12,7 +12,6 @@ $Error_Login = $_SESSION['error_login'];
     <link rel="stylesheet" href="css/style1.css">
     <link href="img/volume.png" rel="shortcut icon"/>
     <link rel="stylesheet" type="text/css" href="cssprocess.css" />
-    <script src="javascriptprocess.js"></script>
 </head>
 <body>
   <?php include_once('header.php');?>
@@ -35,5 +34,6 @@ $Error_Login = $_SESSION['error_login'];
   <script src="js/owl.carousel.min.js"></script>
   <script src="js/circle-progress.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="javascriptprocess.js"></script>
 </body>
 </html>
