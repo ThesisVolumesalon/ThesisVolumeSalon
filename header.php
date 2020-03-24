@@ -3,9 +3,9 @@
 <head>
 	<title></title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Diva Beauty salon template">
-	<meta name="keywords" content="diva, beauty, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">\
+	<meta name="description" content="Volume Salon">
+	<meta name="keywords" content="Volume salon, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="img/favicon.ico" rel="shortcut icon"/><!-- Favicon -->   
 	<link rel="stylesheet" href="css/bootstrap.min.css"/><!-- Stylesheets -->
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
