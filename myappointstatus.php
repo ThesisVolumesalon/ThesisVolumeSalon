@@ -525,8 +525,6 @@ $name=$row['name'];  ?>
                                <td style="text-align: center;"><input type="button" name="view" value="view" id="<?php echo $row["AptNumber"]; ?>" class="btn btn-info btn-xs view_data" /></td>  
                           </tr>  
                           <?php $cnt = $cnt+1; }  ?> 
-
-
                      </table>  
                 </div>  
            </div>  
