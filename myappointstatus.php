@@ -9,7 +9,6 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
   else{                                                           #first else in checking open braket
     $uid = $_SESSION['userID'];                              		 #from session in login.php-->
 
-
  $connect = mysqli_connect("localhost", "root", "", "bpmsdb"); 
 
 
@@ -487,6 +486,7 @@ $name=$row['name'];  ?>
                 <br />  
                 <div class="table-responsive"> 
                 <h1 class="myAppointh1"><b>MY APPOINTMENT</b></h1> 
+                <?php include('buttonmyappointstatus.html'); ?>
                      <table class="responstable"> 
                        
                           <tr> 
