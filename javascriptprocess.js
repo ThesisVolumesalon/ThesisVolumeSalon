@@ -1,5 +1,4 @@
 
-
 //this script for password view
 $(".toggle-password").click(function() {
   $(this).toggleClass("fa-eye fa-eye-slash");

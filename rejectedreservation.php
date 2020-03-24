@@ -45,7 +45,7 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
                     AD.userid = $uid  and 
                     ap.userid = $uid  and 
                     ap.Services_id = ser.Service_id and
-                    ap.beautician_id =  employ.employeeId and Status = '' ORDER BY AptDate ";
+                    ap.beautician_id =  employ.employeeId and Status = 2 ORDER BY AptDate ";
                 $result = mysqli_query($con, $select);  
 
                 $query_getting_Count_ofRenderService = "SELECT * 
