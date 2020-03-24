@@ -488,8 +488,7 @@ $name=$row['name'];  ?>
                 <div class="table-responsive"> 
                 <h1 class="myAppointh1"><b>MY APPOINTMENT</b></h1> 
                      <table class="responstable"> 
-
-
+                       
                           <tr> 
                           	<th width="3%">#</th>
                               <th width="5%">Service Ref Number</th> 
