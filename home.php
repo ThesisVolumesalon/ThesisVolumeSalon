@@ -7,6 +7,9 @@ if(strlen($_SESSION['userID']==0)){
   	header('location: home.html');
 }else{
 		$uid = $_SESSION['userID'];
+		$NameUser = $_SESSION['userfullname'];
+		echo $NameUser;
+
 		$category = '';
 
 		$Result_Get_Time = mysqli_query($con,"select * from tbltimereservation");
@@ -20,7 +23,7 @@ if(strlen($_SESSION['userID']==0)){
  			$category .= '<option value="'.$row["category_id"].'">'.$row["category_Name"].'</option>';
 		}
 ?>
-<?php include_once('includes/headerAccount.php');?> <!--Header-->
+<?php include('includes/headerAccount.php'); ?> <!--Header-->
 	<section class="hero-section set-bg" data-setbg="img/bg.jpg" > 	
 		<div class="container">
 				<div class="hs-item">
@@ -76,7 +79,7 @@ if(strlen($_SESSION['userID']==0)){
 	</section><!-- Here section end -->
 
 	<!-- Services section -->
-	<section class="services-section spad set-bg" data-setbg="img/service.jpg">
+	<section class="services-section spad set-bg" data-setbg="img/unnamed.jpg">
 		<div class="container">
 			<div class="section-title text-white">
 				<h2>Our Services</h2>
@@ -85,47 +88,46 @@ if(strlen($_SESSION['userID']==0)){
 				<!-- service -->
 				<div class="col-lg-4 col-md-6 service text-white">
 					<i class="flaticon-016-woman"></i>
-					<h2>Hair Dressing</h2>
-					<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat.</p>
-				</div>
-				<!-- service -->
-				<div class="col-lg-4 col-md-6 service text-white">
-					<i class="flaticon-017-soap"></i>
-					<h2>Zen Massage</h2>
-					<p>Aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat sollicitudin </p>
-				</div>
-				<!-- service -->
-				<div class="col-lg-4 col-md-6 service text-white">
-					<i class="flaticon-009-makeup-5"></i>
-					<h2>Manicure & Pedicure</h2>
-					<p>Scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin </p>
-				</div>
-				<!-- service -->
-				<div class="col-lg-4 col-md-6 service text-white">
-					<i class="flaticon-048-makeup"></i>
-					<h2>Make Up</h2>
-					<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat.</p>
-				</div>
-				<!-- service -->
-				<div class="col-lg-4 col-md-6 service text-white">
-					<i class="flaticon-045-eyelid"></i>
-					<h2>Tanning Bed</h2>
-					<p>Aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat sollicitudin </p>
+					<h2>Rebonding</h2>
+					<p align="justify">Try our different kinds of rebonding that can give you a beautiful and alive hair taht gives you confident to go out side.</p>
 				</div>
 				<!-- service -->
 				<div class="col-lg-4 col-md-6 service text-white">
 					<i class="flaticon-015-facial-mask"></i>
-					<h2>Spa Treatments</h2>
-					<p>Scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin</p>
+					<h2>Gel Polish</h2>
+					<p align="justify">with the Gel polish your nail become Glossy and look elegant.</p>
+				</div>
+				
+				<!-- service -->
+				<div class="col-lg-4 col-md-6 service text-white">
+					<i class="flaticon-009-makeup-5"></i>
+					<h2>Footspa</h2>
+					<p>Try our footspa service to feels you comfortable while you walking. </p>
+				</div>
+				<!-- service -->
+				<div class="col-lg-4 col-md-6 service text-white">
+					<i class="flaticon-048-makeup"></i>
+					<h2>Hair and Make Up</h2>
+					<p align="justify">Go to the party or event with your beautiful face and beautiful hair that our hairdresser manage the style you want.</p>
+				</div>
+				<!-- service -->
+				<div class="col-lg-4 col-md-6 service text-white">
+					<i class="flaticon-045-eyelid"></i>
+					<h2>Manicure and Pedicure</h2>
+					<p>Choose different kinds of nail art that will make your nails looking good. </p>
+				</div>
+				<!-- service -->
+				<div class="col-lg-4 col-md-6 service text-white">
+					<i class="flaticon-017-soap"></i>
+					<h2>Hair Color and Hair Treatment</h2>
+					<p align="justify">Treat your hair with some of a kind hair blonde that fits your style. And a hair treatment that
+						gives youre crowning glory a glossy hair, smooth and well-nourished hair. </p>
 				</div>
 			</div>
 		</div>
-	</section>
-	<!-- Services section end -->
-
-	
+	</section><!-- Services section end -->
 	<!-- Testimonials section -->
-	<section class="testimonials-section set-bg" data-setbg="img/review-bg.jpg">
+	<section class="testimonials-section set-bg" data set-bg="image/review-bg.jpg">
 		<div class="container">
 			<div class="section-title mb-0">
 				<h2>Client Testimonials</h2>
@@ -135,31 +137,31 @@ if(strlen($_SESSION['userID']==0)){
 					<div class="testimonials-slider owl-carousel">
 						<!-- item -->
 						<div class="ts-item">
-							<div class="quota">“</div>
-							<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus hendrerit, id lobortis leo luctus nec. In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. </p>
-							<div class="ts-pic set-bg" data-setbg="img/review-author.jpg"></div>
+							<div class="quota"></div>
+							<p>volume salon has a great service and the hairdresser is proffesional to do my hair rebonding. i will grateful recommend this salon to my friends. </p>
+							<div></div>
 							<div class="ts-author-info">
-								<h4>Maria Parker</h4>
-								<span>Regular Client</span>
+								<h4>Jasmin Solomon</h4>
+								<span>New Customer</span>
 							</div>
 						</div>
 						<!-- item -->
 						<div class="ts-item">
-							<div class="quota">“</div>
-							<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus hendrerit, id lobortis leo luctus nec. In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. </p>
-							<div class="ts-pic set-bg" data-setbg="img/review-author.jpg"></div>
+							<div class="quota"></div>
+							<p>They have a great service that im experienced. i have my beautiful nail art and comfortable heel. its a pleasure that i choose volume salon </p>
+							<div></div>
 							<div class="ts-author-info">
-								<h4>Maria Parker</h4>
-								<span>Regular Client</span>
+								<h4>Jecelyn Rombaoa</h4>
+								<span>Regular Customer</span>
 							</div>
 						</div>
 						<!-- item -->
 						<div class="ts-item">
-							<div class="quota">“</div>
-							<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus hendrerit, id lobortis leo luctus nec. In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. </p>
-							<div class="ts-pic set-bg" data-setbg="img/review-author.jpg"></div>
+							<div class="quota"></div>
+							<p>Got my haircut i feel handsome for my new look. the hairdresser are approachable </p>
+							<div></div>
 							<div class="ts-author-info">
-								<h4>Maria Parker</h4>
+								<h4>Ric Gajasan</h4>
 								<span>Regular Client</span>
 							</div>
 						</div>
@@ -169,95 +171,16 @@ if(strlen($_SESSION['userID']==0)){
 		</div>
 	</section>
 	<!-- Testimonials section end -->
-	<!-- brands section -->
-	<div class="brands-section set-bg" data-setbg="img/brands-bg.jpg">
-		<div class="brands-slider owl-carousel">
-			<div class="bs-item">
-				<img src="img/brands/1.png" alt="">
-			</div>
-			<div class="bs-item">
-				<img src="img/brands/2.png" alt="">
-			</div>
-			<div class="bs-item">
-				<img src="img/brands/3.png" alt="">
-			</div>
-			<div class="bs-item">
-				<img src="img/brands/4.png" alt="">
-			</div>
-			<div class="bs-item">
-				<img src="img/brands/5.png" alt="">
-			</div>
-		</div>
-	</div>
-	<!--  brands section end -->
-
-	<!-- Footer section -->
-	<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
-		<div class="footer-warp">
-			<div class="footer-widgets">
-				<div class="row">
-					<div class="col-xl-7 col-lg-7">
-						<div class="row">
-							<div class="col-xl-4 col-lg-5 col-md-6">
-								<div class="footer-widget about-widget">
-									<div class="logo">
-          						<a href="">
-            						<h1>VOLUME SALON</h1>
-            							<span>Men and Woman</span>
-         								</a>
-       								</div>
-
-									<p>In vitae nisi aliquam, scelerisque leo a, volu- tpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat.</p>
-									<div class="fw-social">
-										<a href=""><i class="fa fa-pinterest"></i></a>
-										<a href=""><i class="fa fa-facebook"></i></a>
-										<a href=""><i class="fa fa-twitter"></i></a>
-										<a href=""><i class="fa fa-dribbble"></i></a>
-										<a href=""><i class="fa fa-behance"></i></a>
-										<a href=""><i class="fa fa-linkedin"></i></a>
-									</div>
-								</div> 
-							</div>
-
-							<div class="col-xl-6 col-lg-6 col-md-6 offset-xl-2 offset-lg-1 offset-md-0">
-								<div class="footer-widget list-widget">
-									<h4 class="fw-title"><i class="flaticon-009-makeup-5"></i>Our Services</h4>
-									<ul>
-										<li><a href="">Manicure</a></li>
-										<li><a href="">Pedicure</a></li>
-										<li><a href="">Massage</a></li>
-										<li><a href="">Hair Dressing</a></li>
-										<li><a href="">Spa</a></li>
-										<li><a href="">Pedicure</a></li>
-										<li><a href="">Beauty treatments </a></li>
-									</ul>
-									<ul>
-										<li><a href="">Wedding Hair</a></li>
-										<li><a href="">Manicure</a></li>
-										<li><a href="">Pedicure</a></li>
-										<li><a href="">Massage</a></li>
-										<li><a href="">Hair Dressing</a></li>
-										<li><a href="">Botox</a></li>
-										<li><a href="">Slimming </a></li>
-									</ul>
-								</div> 
-							</div>
-						</div>	
-					</div>
+	
+	<footer class="set-bg" data-setbg="img/footer-bg.jpg" style="text-align: center;"><!-- Footer section -->
+				<div class="logo1" style="float: center;">
+					<a href="">
+						<h1 style="color: black;">VOLUME SALON</h1>
+						<span>Men and Woman</span>
+					</a>
+					<p>The Salon that makes you beautiful and stand out shine.</p>
 				</div>
-			</div>
-
-			<div class="footer-bottom">
-				<div class="footer-nav">
-					<ul>
-						<li><a href="">Home</a></li>
-						<li><a href="">About us</a></li>
-						<li><a href="">Services</a></li>
-						<li><a href="">News</a></li>
-						<li><a href="">Contact</a></li>
-					</ul>
-				</div>
-		</div>
+				
 	</footer>
 	<!-- Footer section end -->
 	<!--====== Javascripts & Jquery ======-->

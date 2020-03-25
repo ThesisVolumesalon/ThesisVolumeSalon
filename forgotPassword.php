@@ -8,7 +8,7 @@ $Error_For_Forgot_Password = $_SESSION['error_forgot_password'];
 <head>
 <meta charset="utf-8">
 <title>Forgot Password </title>
-<link rel="stylesheet" href="registerDesign.css" />
+<link rel="stylesheet" href="css/registerDesign.css" />
     <link rel="stylesheet" href="css/style1.css">
     <link href="img/volume.png" rel="shortcut icon"/>
 </head>

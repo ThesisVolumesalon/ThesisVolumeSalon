@@ -1,22 +1,32 @@
 <?php 
-
+session_start();
+error_reporting(0);
 include('includes/dbconnection.php');
 
-?>
+$uid = $_SESSION['userID'];
 
+		$Result_User_Fullname = mysqli_query($con,"select concat(userfirstname,' ',  userlastname) as UserFullName from tblusers where user_id ='$uid'");
+		$Result_User_Fullname_In_Array = mysqli_fetch_array($Result_User_Fullname);
+		$Name_Of_User = $Result_User_Fullname_In_Array['UserFullName'];
 
+		$Result_Render_Service = mysqli_query($con,"SELECT * 
+  					FROM tbl_edit_user_reservation editdata,
+ 					 	 tblservices serv 
+ 					WHERE editdata.edit_reserv_status = 0 and 
+ 						  editdata.edit_service_id = serv.Service_id and 
+ 					 	  editdata.user_id = '$uid'");
+		$Number_of_Render_Service =mysqli_num_rows($Result_Render_Service);
+?> 
 <!DOCTYPE html>
-<html lang="zxx">
+<html>
 <head>
-	<title>Volume Salon </title>
+	<title></title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Volume Salon">
-	<meta name="keywords" content="diva, beauty, creative, html">
+	<meta name="description" content="Volume Salon Montalban for Reservation">
+	<meta name="keywords" content="Pacleb Versio 1.2, land , creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="img/volume.png" rel="shortcut icon"/>
-
-	<!-- Stylesheets -->
+	    
+	<link href="img/volume.png" rel="shortcut icon"/> <!-- Site icon -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="css/font-awesome.min.css"/>
 	<link rel="stylesheet" href="css/jquery-ui.min.css"/>
@@ -24,50 +34,55 @@ include('includes/dbconnection.php');
 	<link rel="stylesheet" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="css/animate.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="cssprocess.css">
 
-
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
-
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="javascriptprocess.js">	</script>
+	<script></script>
 </head>
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
-	
+	<div id="preloder"><div class="loader"></div></div>
 	<!-- Header section -->
-	<header class="header-section">
+	<header class="header-section" id="myHeader">
 		<div class="header-warp">
-			<!-- logo -->
-			<div class="logo">
-          <a href="">
-            <h1>VOLUME SALON</h1>
-            <span>Men and Woman</span>
-          </a>
-        </div>
-			<!-- responsive -->
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<!-- Navigation Menu -->
-			<ul class="main-menu">
-				<li><a href="home.html">Home</a></li>
-				<li><a href="about.html">About Us</a></li>
-				<li class="active"><a href="services.php">Services</a></li>
-				<li><a href="blog.html">News</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-			<div class="header-right">
-				<a href="" class="site-btn sb-line sb-big">85428154</a>
-				<a href="login.php" class="site-btn sb-big">LOG IN</a>
-			</div>
-		</div>
-	</header>
-	<!-- Header section end -->
+			<div class="logo site-logo"><!-- logo -->
+          		<a href="">
+            		<h1>VOLUME SALON</h1>
+            		<span>Men and Woman</span>
+          		</a>
+        	</div>
 
+        <div class="header-right">
+			<a href="myprofile.php" class="site-btn sb-small" title="MY PROFILE">
+					<span><i class="fa fa-user-circle fa-2x" ></i></span><?php echo $Name_Of_User?></a>
+              <ul class="sub">
+                  <li><a href="myappointstatus.php"><i class="fa fa-tags fa-2x"></i> MY RESERVATION</a></li>
+                  <li><a href="logout.php"><i class="fa fa-sign-out fa-2x"></i> LOG OUT</a></li>
+              </ul>
+		</div>
+
+		<div class="header-right1">
+        	<a href="listAppoint.php" class="fa fa-scissors fa-2x" title="Service Render">
+  				<?php if($Number_of_Render_Service>0){?>
+					<span class="fa fa-circle"></span>
+  					<span class="num"><?php echo $Number_of_Render_Service; ?></span>
+				<?php } ?>
+			</a>
+        </div>
+		<div class="nav-switch"><i class="fa fa-bars"></i></div>
+			<ul class="main-menu"> <!-- Navigation Menu -->
+				<li ><a href="home.php"><span>Home</span></a></li>
+				<li><a href="about.php">About Us</a></li>
+				<li class="active"><a href="services1.php">Services</a></li>
+				<li><a href="blog.php">News</a></li>
+				<li><a href="contact.php">Contact</a></li>
+			</ul>
+		</div>
+    </header>
+
+    
                                                 
 	<!-- Page info section -->
 	<section class="page-info-section set-bg" data-setbg="img/page-top-bg/1.jpg" >
@@ -306,14 +321,11 @@ include('includes/dbconnection.php');
 		</div>
 	</footer><!-- Footer section end -->
 	
-
-	<!--====== Javascripts & Jquery ======-->
+    
+    <!--====== Javascripts & Jquery ======-->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main.js"></script>
-
-    </body>
-</html>

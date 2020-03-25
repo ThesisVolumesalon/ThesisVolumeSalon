@@ -17,10 +17,11 @@ if(isset($_POST['login'])){
             $_SESSION['error_login'] =  $Error_Login;
             header('location: login.php');
       }else{
-         $query=mysqli_query($con,"SELECT user_id FROM tblusers WHERE useremail = '$email' AND userpassword='$password' ");
+         $query=mysqli_query($con,"SELECT user_id, concat(userfirstname,' ',  userlastname) as UserFullName FROM tblusers WHERE useremail = '$email' AND userpassword='$password' ");
          $result=mysqli_fetch_array($query);
             if($result>0){
                 $_SESSION['userID']= $result['user_id'];
+                $_SESSION['userfullname'] = $result['UserFullname'];
                 header('location: home.php');
             }else{
                 $Error_Login = "<div class='alert alert-danger'>Incorect Password! </div>";

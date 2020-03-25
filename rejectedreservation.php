@@ -97,10 +97,10 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
                     </div>
                     <ul class="main-menu"><!-- Navigation Menu -->
                       <li ><a href="home.php">Home</a></li>
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="services.html">Services</a></li>
-                      <li><a href="blog.html">News</a></li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="about.php">About Us</a></li>
+                      <li><a href="services1.php">Services</a></li>
+                      <li><a href="blog.php">News</a></li>
+                      <li><a href="contact.php">Contact</a></li>
                     </ul>
               </div>
 	</header> 

@@ -28,7 +28,7 @@
           </a>
         </div>
         <div class="header-right">
-			<a href="" class="site-btn sb-line sb-big">+63 9777 7777</a>
+			<a href="" class="site-btn sb-line sb-big">85428154</a>
 			<a href="login.php" class="site-btn sb-big">LOG IN</a>
 		</div>
 		<div class="nav-switch"><!-- responsive -->

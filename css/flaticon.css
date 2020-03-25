@@ -25,6 +25,7 @@
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
   font-style: normal;
+  color:  #e22b63;
 }
 
 .flaticon-001-makeup-6:before { content: "\f100"; }
