@@ -8,12 +8,12 @@ if(strlen($_SESSION['userID']==0)){ ?>
 		<!DOCTYPE html>															<!-- Without Accout -->
 		<html>
 			<head>
-				<title>About Us</title>
+				<title>News</title>
 				<?php include('html/links.html'); ?>							<!-- Link section -->
 			</head>
 			<body>
 				<?php include('html/header.html'); ?>							<!-- Header section -->
-				<?php include('html/aboutcontent.html'); ?>						<!-- About section -->
+				<?php include('html/newscontent.html'); ?>						<!-- About section -->
 				<?php include('html/footer.html'); ?>							<!-- Footer section -->
 			</body>
 			<?php include('html/scriptslinks.html'); ?>							<!--Javascripts & Jquery-->
@@ -24,12 +24,12 @@ if(strlen($_SESSION['userID']==0)){ ?>
 		<!DOCTYPE html>															<!-- With Account -->
 		<html>
 			<head>
-				<title>About Us</title>
+				<title>News</title>
 				<link href="img/volume.png" rel="shortcut icon"/> 				<!-- Site icon -->
 			</head>
 			<body>
 				<?php include('includes/headerAccount.php'); ?> 				<!-- Header section end -->
-				<?php include('html/aboutcontent.html'); ?>						<!-- About section -->
+				<?php include('html/newscontent.html'); ?>						<!-- About section -->
 				<?php include('html/footer.html'); ?>							<!-- Footer section -->
 			</body>
 			<?php include('html/scriptslinks.html'); ?>							<!-- Javascripts & Jquery -->

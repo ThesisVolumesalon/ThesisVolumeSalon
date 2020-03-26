@@ -3,7 +3,6 @@ session_start();
 error_reporting(0);
 
 $uid = $_SESSION['userID'];
-
 		$Result_User_Fullname = mysqli_query($con,"select concat(userfirstname,' ',  userlastname) as UserFullName from tblusers where user_id ='$uid'");
 		$Result_User_Fullname_In_Array = mysqli_fetch_array($Result_User_Fullname);
 		$Name_Of_User = $Result_User_Fullname_In_Array['UserFullName'];
@@ -16,35 +15,24 @@ $uid = $_SESSION['userID'];
  					 	  editdata.user_id = '$uid'");
 		$Number_of_Render_Service =mysqli_num_rows($Result_Render_Service);
 ?> 
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<meta charset="UTF-8">
-	<meta name="description" content="Volume Salon Montalban for Reservation">
-	<meta name="keywords" content="Pacleb Versio 1.2, land , creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	   
-	<link href="img/volume.png" rel="shortcut icon"/> <!-- Site icon -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/jquery-ui.min.css"/>
-	<link rel="stylesheet" href="css/flaticon.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-	<link rel="stylesheet" type="text/css" href="cssprocess.css">
+	<title>Volume Salon</title>
 
+	<?php include('html/links.html'); ?> 
+
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/cssprocess.css">
 	<script src="js/jquery-1.12.4.js"></script>
 	<script src="js/jquery-ui.js"></script>
 	<script src="javascriptprocess.js">	</script>
-	<script></script>
+
 </head>
 <body>
 	<div id="preloder"><div class="loader"></div></div>
-	<!-- Header section -->
-	<header class="header-section" id="myHeader">
+	<header class="header-section" id="myHeader">					<!-- Header section -->
 		<div class="header-warp">
 			<div class="logo site-logo"><!-- logo -->
           		<a href="">
@@ -52,34 +40,30 @@ $uid = $_SESSION['userID'];
             		<span>Men and Woman</span>
           		</a>
         	</div>
-
-        <div class="header-right">
-			<a href="myprofile.php" class="site-btn sb-small" title="MY PROFILE">
-					<span><i class="fa fa-user-circle fa-2x" ></i></span><?php echo $Name_Of_User?></a>
-              <ul class="sub">
-                  <li><a href="myappointstatus.php"><i class="fa fa-tags fa-2x"></i> MY RESERVATION</a></li>
-                  <li><a href="logout.php"><i class="fa fa-sign-out fa-2x"></i> LOG OUT</a></li>
-              </ul>
+			<div class="header-right">
+				<a href="myprofile.php" class="site-btn sb-small" title="MY PROFILE"><span><i class="fa fa-user-circle fa-2x" ></i></span><?php echo $Name_Of_User?></a>
+						<ul class="sub">
+							<li><a href="myappointstatus.php"><i class="fa fa-tags fa-2x"></i> MY RESERVATION</a></li>
+							<li><a href="logout.php"><i class="fa fa-sign-out fa-2x"></i> LOG OUT</a></li>
+						</ul>
+			</div>
+			<div class="header-right1">
+				<a href="listAppoint.php" class="fa fa-scissors fa-2x" title="Service Render">
+					<?php if($Number_of_Render_Service>0){?>
+						<span class="fa fa-circle"></span>
+						<span class="num"><?php echo $Number_of_Render_Service; ?></span>
+					<?php } ?>
+				</a>
+			</div>
+			<div class="nav-switch"><i class="fa fa-bars"></i></div>
+				<ul class="main-menu"> <!-- Navigation Menu -->
+					<li ><a class="b" href="home.php"><span>Home</span></a></li>
+					<li><a href="about.php">About Us</a></li>
+					<li><a href="services1.php">Services</a></li>
+					<li><a href="news.php">News</a></li>
+					<li><a href="contact.php">Contact</a></li>
+				</ul>
 		</div>
-
-		<div class="header-right1">
-        	<a href="listAppoint.php" class="fa fa-scissors fa-2x" title="Service Render">
-  				<?php if($Number_of_Render_Service>0){?>
-					<span class="fa fa-circle"></span>
-  					<span class="num"><?php echo $Number_of_Render_Service; ?></span>
-				<?php } ?>
-			</a>
-        </div>
-		<div class="nav-switch"><i class="fa fa-bars"></i></div>
-			<ul class="main-menu"> <!-- Navigation Menu -->
-				<li class="active" ><a class="b" href="home.php"><span>Home</span></a></li>
-				<li><a href="about.php">About Us</a></li>
-				<li><a href="services1.php">Services</a></li>
-				<li><a href="blog.php">News</a></li>
-				<li><a href="contact.php">Contact</a></li>
-			</ul>
-		</div>
-	</header>
-	<!-- Header section end -->
+	</header><!-- Header section end -->
 </body>
 </html>
