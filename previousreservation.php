@@ -99,7 +99,7 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
                       <li ><a href="home.php">Home</a></li>
                       <li><a href="about.php">About Us</a></li>
                       <li><a href="services1.php">Services</a></li>
-                      <li><a href="blog.php">News</a></li>
+                      <li><a href="news.php">News</a></li>
                       <li><a href="contact.php">Contact</a></li>
                     </ul>
               </div>

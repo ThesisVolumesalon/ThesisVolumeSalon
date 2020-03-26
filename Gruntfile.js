@@ -40,11 +40,10 @@ module.exports = function(grunt){
                     'build/css/style.css',
                     'build/js/main.js',
                     'build/home.html',
-                    'build/about.html',
+                    'build/about.php',
                     'build/services.html',
-                    'build/blog.html',
-                    'build/contact.html',
-                    'build/element.html',
+                    'build/news.php',
+                    'build/contact.php',
                 ]
             },
             options: {

@@ -5,18 +5,19 @@ error_reporting(0);
 	$uid = $_SESSION['userID'];
 
 if(strlen($_SESSION['userID']==0)){ ?>
+
 		<!DOCTYPE html>															<!-- Without Accout -->
 		<html>
 			<head>
 				<title>News</title>
-				<?php include('html/links.html'); ?>							<!-- Link section -->
+				<?php include('html/link/links.html'); ?>						<!-- Link section -->
 			</head>
 			<body>
 				<?php include('html/header.html'); ?>							<!-- Header section -->
-				<?php include('html/newscontent.html'); ?>						<!-- About section -->
+				<?php include('html/content/newscontent.html'); ?>				<!-- News section -->
 				<?php include('html/footer.html'); ?>							<!-- Footer section -->
 			</body>
-			<?php include('html/scriptslinks.html'); ?>							<!--Javascripts & Jquery-->
+			<?php include('html/link/scriptslinks.html'); ?>							<!--Javascripts & Jquery-->
 		</html>
 
 <?php  } else { ?>  															<!-- else condition -->
@@ -29,10 +30,10 @@ if(strlen($_SESSION['userID']==0)){ ?>
 			</head>
 			<body>
 				<?php include('includes/headerAccount.php'); ?> 				<!-- Header section end -->
-				<?php include('html/newscontent.html'); ?>						<!-- About section -->
+				<?php include('html/content/newscontent.html'); ?>				<!-- News section -->
 				<?php include('html/footer.html'); ?>							<!-- Footer section -->
 			</body>
-			<?php include('html/scriptslinks.html'); ?>							<!-- Javascripts & Jquery -->
+			<?php include('html/link/scriptslinks.html'); ?>					<!-- Javascripts & Jquery -->
 		</html>
 
 <?php } ?>
