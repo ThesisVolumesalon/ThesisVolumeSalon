@@ -58,6 +58,7 @@ $select = " SELECT
 
             if($row["Status"] == 1){
 
+               
            $output .= ' 
                 <h3 style="text-align:center;"><b>'.$row["FULLNAME"].'</b></h3>
                 <h4 style="text-align:center;">'.$row["ADDRESS"].'</h4>
