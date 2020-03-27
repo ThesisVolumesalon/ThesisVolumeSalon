@@ -26,7 +26,7 @@ $(document).ready(function(){
     result = 'service';
    }
    $.ajax({
-    url:"processofhomepage.php",
+    url:"control/processofhomepage.php",
     method:"POST",
     data:{action:action, query:query},
     success:function(data){

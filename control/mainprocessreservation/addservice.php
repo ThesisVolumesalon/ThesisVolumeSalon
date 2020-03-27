@@ -17,7 +17,7 @@ include('includes/dbconnection.php');
 				<div class="hs-item">
 					<div class="hs-content text-white">
 							<h4 class="fw-title"><i class="flaticon-039-make-up"></i>Add Service</h4>
-							<form class="fw-contact-form" action="processofhomepage.php" method="POST" >
+							<form class="fw-contact-form" action="control/processofhomepage.php" method="POST" >
 							<br/>
 
    							<select name="category" id="category" class="form-control action" required="true"><!--cATEGORY CHOICE-->
@@ -56,4 +56,5 @@ include('includes/dbconnection.php');
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/circle-progress.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/javascriptprocess.js"></script>
 </body>

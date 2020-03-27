@@ -19,12 +19,14 @@ $uid = $_SESSION['userID'];
 
 <head>
 	<title>Volume Salon</title>
-		<?php include('html/link/links.html'); ?> 
+
+		<?php include('./../html/link/links.html'); ?> 
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="css/cssprocess.css">
 		<script src="js/jquery-1.12.4.js"></script>
 		<script src="js/jquery-ui.js"></script>
-		<script src="js/javascriptprocess.js">	</script>
+		<script src="js/javascriptprocess.js"></script>
+		
 </head>
 
 <body>
@@ -47,12 +49,12 @@ $uid = $_SESSION['userID'];
 					</a>
 						<ul class="sub">
 							<li><a href="myappointstatus.php"><i class="fa fa-tags fa-2x"></i> MY RESERVATION</a></li>
-							<li><a href="logout.php"><i class="fa fa-sign-out fa-2x"></i> LOG OUT</a></li>
+							<li><a href="/../../homepage/control/register/logout.php"><i class="fa fa-sign-out fa-2x"></i> LOG OUT</a></li>
 						</ul>
 				</div>
 
 				<div class="header-right1">
-					<a href="listAppoint.php" class="fa fa-scissors fa-2x" title="Service Render">
+					<a href="/../../homepage/control/mainprocessreservation/listAppoint.php" class="fa fa-scissors fa-2x" title="Service Render">
 						<?php if($Number_of_Render_Service>0){?>
 							<span class="fa fa-circle"></span>
 							<span class="num"><?php echo $Number_of_Render_Service; ?></span>
@@ -61,11 +63,11 @@ $uid = $_SESSION['userID'];
 				</div>
 
 				<ul class="main-menu"> <!-- Navigation Menu -->
-					<li ><a class="b" href="home.php"><span>Home</span></a></li>
-						<li><a href="about.php">About Us</a></li>
-							<li><a href="services.php">Services</a></li>
-						<li><a href="news.php">News</a></li>
-					<li><a href="contact.php">Contact</a></li>
+					<li ><a class="b" href="/../../homepage/index.php"><span>Home</span></a></li>
+						<li><a href="/../../homepage/includes/about.php">About Us</a></li>
+							<li><a href="/../../homepage/includes/services.php">Services</a></li>
+						<li><a href="/../../homepage/includes/news.php">News</a></li>
+					<li><a href="/../../homepage/includes/contact.php">Contact</a></li>
 				</ul>
 
 			</div>

@@ -1,9 +1,9 @@
 <?php 
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');                             #Database connection
+include('../../Database/dbconnection.php');                             #Database connection
 if(strlen($_SESSION['userID']==0)){                               #first if checking open braket true
-  header('location: home.html');                                  #if true jump to home.html
+  header('location:  /../../homepage/index.php');                 #if true jump to home.html
                                                                   #first if checking open braket true
   }else{                                                          #first else in checking open braket
     $uid = $_SESSION['userID'];                                   #from session in login.php
@@ -20,12 +20,25 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
 <html>
 <head>
   <title>My Reservation</title>
-  <link rel="stylesheet" type="text/css" href="css/tabledesign.css">
-  <link href="img/volume.png" rel="shortcut icon"/>
+  <meta charset="UTF-8">
+      <meta name="description" content="Volume Salon">
+      <meta name="keywords" content="Volume, Volume, creative, html">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="../img/volume.png" rel="shortcut icon" /><!-- Favicon -->
+      <link rel="stylesheet" href="../../css/bootstrap.min.css" /><!-- Stylesheets -->
+      <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+      <link rel="stylesheet" href="../../css/jquery-ui.min.css" />
+      <link rel="stylesheet" href="../../css/flaticon.css" />
+      <link rel="stylesheet" href="../../css/owl.carousel.css" />
+      <link rel="stylesheet" href="../../css/style.css" />
+      <link rel="stylesheet" href="../../css/animate.css" />	
+      <link href="img/volume.png" rel="shortcut icon"/>
+      <link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
+      <link rel="stylesheet" type="text/css" href="../../css/tabledesign.css">
 </head>
 
 <body>
-   <?php include_once('includes/headerAccount.php');?>             <!-- Header section -->
+   <?php include_once('../../includes/headerAccount.php');?>             <!-- Header section -->
           <table class="responstable">
             <h2 >Edit My Reservation</h2>
               <thead>
@@ -64,11 +77,11 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
           </table>
 </body>
   <!--====== Javascripts & Jquery ======-->
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/circle-progress.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/owl.carousel.min.js"></script>
+    <script src="../../js/circle-progress.min.js"></script>
+    <script src="../../js/main.js"></script>
 </html>
 <?php } #first else in top checking end braket ?>

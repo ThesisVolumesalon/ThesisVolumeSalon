@@ -8,13 +8,24 @@ $Error_Register = $_SESSION['error_register'];?>
 
 <title>Sign In</title>
       <meta charset="UTF-8">
-      <?php include('html/link/links.html'); ?>	
+      <meta charset="UTF-8">
+      <meta name="description" content="Volume Salon">
+      <meta name="keywords" content="Volume, Volume, creative, html">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="../img/volume.png" rel="shortcut icon" /><!-- Favicon -->
+      <link rel="stylesheet" href="../../css/bootstrap.min.css" /><!-- Stylesheets -->
+      <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+      <link rel="stylesheet" href="../../css/jquery-ui.min.css" />
+      <link rel="stylesheet" href="../../css/flaticon.css" />
+      <link rel="stylesheet" href="../../css/owl.carousel.css" />
+      <link rel="stylesheet" href="../../css/style.css" />
+      <link rel="stylesheet" href="../../css/animate.css" />
       <link href="img/volume.png" rel="shortcut icon"/>
-      <link rel="stylesheet" href="css/registerDesign.css" />
-      <link rel="stylesheet" type="text/css" href="css/cssprocess.css">
+      <link rel="stylesheet" href="../../css/registerDesign.css" />
+      <link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
 </head>
   <body>
-      <?php include('html/header.html'); ?><!-- Header section end -->
+      <?php include('../../html/header.html'); ?><!-- Header section end -->
           <form class="login" action="processofhomepage.php" method="POST">
                 <h1 class="login-title">Sign Up</h1>
 
@@ -35,7 +46,12 @@ $Error_Register = $_SESSION['error_register'];?>
           </form>
   </body>
   
-    <?php include('html/link/scriptslinks.html'); ?>		
-    <script src="javascriptprocess.js"></script>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/owl.carousel.min.js"></script>
+    <script src="../../js/circle-progress.min.js"></script>
+    <script src="../../js/main.js"></script>		
+    <script src="../../js/javascriptprocess.js"></script>
 
 </html>

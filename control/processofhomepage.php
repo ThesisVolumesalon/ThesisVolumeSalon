@@ -1,10 +1,11 @@
 <?php 
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');
+include('../Database/dbconnection.php');
 
 $reservNum = $_GET['reserv'];
 
+// done deone
 
 //LOGIN PROCESS:  press this will be the process from file of login.php
 if(isset($_POST['login'])){
@@ -15,18 +16,18 @@ if(isset($_POST['login'])){
     if(mysqli_fetch_array($emailuserConnectedCheck)<1){
             $Error_Login =  "<div class='alert alert-danger'>This Email is not exist! <br><a href='"."register.php"."'>Click here to Register</a></div>";
             $_SESSION['error_login'] =  $Error_Login;
-            header('location: login.php');
+            header('location: /../../homepage/control/register/login.php');
       }else{
          $query=mysqli_query($con,"SELECT user_id, concat(userfirstname,' ',  userlastname) as UserFullName FROM tblusers WHERE useremail = '$email' AND userpassword='$password' ");
          $result=mysqli_fetch_array($query);
             if($result>0){
                 $_SESSION['userID']= $result['user_id'];
                 $_SESSION['userfullname'] = $result['UserFullname'];
-                header('location: home.php');
+                header('location: /../../homepage/index.php');
             }else{
                 $Error_Login = "<div class='alert alert-danger'>Incorect Password! </div>";
                 $_SESSION['error_login'] = $Error_Login;
-                header('location: login.php');
+                header('location: /../../homepage/control/register/login.php');
             }
         }
   }
@@ -82,7 +83,7 @@ if(strlen($password) < 5 && strlen($cpassword) < 5){
 }
 
   
-//ADD reservation to tbl_edit_user_reservation PROCESS:  press this will be the process from file home.php and addservice.php
+//ADD reservation to tbl_edit_user_reservation PROCESS:  press this will be the process from file index.php and addservice.php
 if(isset($_POST['submitreservation'])){
         $atime     = $_POST['time'];
         $services  = $_POST['service'];

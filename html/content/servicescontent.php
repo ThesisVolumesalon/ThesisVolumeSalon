@@ -1,6 +1,6 @@
                                              
 	<!-- Page info section -->
-	<section class="page-info-section set-bg" data-setbg="img/page-top-bg/1.jpg" >
+	<section class="page-info-section set-bg" data-setbg="../img/page-top-bg/1.jpg" >
 		<div class="container text-center">
 			<h2>Services</h2>
 		</div>
@@ -9,7 +9,7 @@
 
 
 	<!-- Services section -->
-	<section class="services-section spad set-bg" data-setbg="img/download.jpg">
+	<section class="services-section spad set-bg" data-setbg="../img/download.jpg">
 		<div class="container">
 			<div class="section-title text-white">
 				<h2>Our Services</h2>

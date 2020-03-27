@@ -39,11 +39,11 @@ module.exports = function(grunt){
                 src : [
                     'build/css/style.css',
                     'build/js/main.js',
-                    'build/home.html',
-                    'build/about.php',
-                    'build/services.html',
-                    'build/news.php',
-                    'build/contact.php',
+                    'build/index.php',
+                    'build/include/about.php',
+                    'build/include/services.php',
+                    'build/include/news.php',
+                    'build/include/contact.php',
                 ]
             },
             options: {
