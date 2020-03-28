@@ -1,9 +1,9 @@
 <?php 
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');                             #Database connection
+include('../../Database/dbconnection.php');                           #Database connection
 if(strlen($_SESSION['userID']==0)){                               #first if checking open braket true
-  header('location: home.html');                                  #if true jump to home.html
+  header('location: ../../homepage/index.php');                                  #if true jump to home.html
 }                                                                 #first if checking open braket true
   else{                                                           #first else in checking open braket
     $uid = $_SESSION['userID'];                              		 #from session in login.php-->
@@ -68,8 +68,8 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-          <link rel="stylesheet" href="css/font-awesome.min.css"/>
-          <link rel="stylesheet" href="css/reservation.css"/>
+          <link rel="stylesheet" href="../../css/font-awesome.min.css"/>
+          <link rel="stylesheet" href="../../css/reservation.css"/>
           <script src="javascriptprocess.js"></script>
       </head>  
       <body> 
@@ -109,7 +109,7 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
             <br />  
               <div class="table-responsive"> 
                 <h1 class="myAppointh1"><b>MY RESERVATION</b></h1> 
-                    <?php include('buttonmyappointstatus.html'); ?>
+                     <?php include('../../html/content/buttonmyappointstatus.html'); ?>
                         <table class="responstable"> 
                           <tr> 
                           	<th width="3%">#</th>

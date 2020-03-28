@@ -1,26 +1,15 @@
 /* =================================
 ------------------------------------
-  Copyright by 
-  Diva - Beauty Salon Template
+  
   Version: 1.0 
-  Revice version 1.1 by Pacleb.R
-  including Database
+  Revice version 1.1 by Thesis
  ------------------------------------ 
  ====================================*/
-
 /*----------------------------------------*/
 /* Template default CSS
 /*----------------------------------------*/
 
-@font-face {
-	font-family: 'Futura LT';
-	src: url("../fonts/Futura.woff");
-}
 
-@font-face {
-	font-family: 'Futura LT Bold';
-	src: url("../fonts/FuturaLT-Bold.woff");
-}s
 html,
 body {
 	height: 100%;
@@ -46,7 +35,7 @@ body {
     display: inline-block;
 }
 .logo a{
-    padding: 3em .3em .1em;
+    padding: 2em .3em .1em;
 	display: block;
 	text-decoration: none;
 }

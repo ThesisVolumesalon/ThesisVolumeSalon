@@ -8,12 +8,12 @@ $emaildata = $_SESSION['email'];
 <head>
 <meta charset="utf-8">
 <title>Fill Up Addresss</title>
-<link rel="stylesheet" href="registerDesign.css" />
- <link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="../../css/registerDesign.css" />
+ <link rel="stylesheet" href="../../css/style1.css">
 </head>
 <body>
 
-	<form class="address" action="" method="POST">
+	<form class="address" action="/../homepage/control/processofhomepage.php" method="POST">
         <h1 class="login-title">Your Address</h1>
           <span><h5>Before You Continue the Process Fill up this Form!</h5></span>
             <input type="hidden" name="email" value="<?php echo $emaildata?>">

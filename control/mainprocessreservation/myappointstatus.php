@@ -1,12 +1,12 @@
 <?php 
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');                             #Database connection
+include('../../Database/dbconnection.php');                       #Database connection
 if(strlen($_SESSION['userID']==0)){                               #first if checking open braket true
-  header('location: home.html');                                  #if true jump to home.html
+  header('location: /../../homepage/index.php');                   #if true jump to home.html
 }                                                                 #first if checking open braket true
   else{                                                           #first else in checking open braket
-    $uid = $_SESSION['userID'];                              		 #from session in login.php-->
+    $uid = $_SESSION['userID'];                              		  #from session in login.php-->
 
       $select = "SELECT  user_id,
                     CONCAT(userfirstname ,' ',
@@ -65,51 +65,82 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
  <html>  
       <head>  
           <title></title>  
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-          <link rel="stylesheet" href="css/font-awesome.min.css"/>
-          <link rel="stylesheet" href="css/reservation.css"/>
+          <meta charset="UTF-8">
+      <meta name="description" content="Volume Salon">
+      <meta name="keywords" content="Volume, Volume, creative, html">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+       
+      <link href="../img/volume.png" rel="shortcut icon" /><!-- Favicon -->
+      <link rel="stylesheet" href="../../css/bootstrap.min.css" /><!-- Stylesheets -->
+      <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+      <link rel="stylesheet" href="../../css/jquery-ui.min.css" />
+      <link rel="stylesheet" href="../../css/flaticon.css" />
+      <link rel="stylesheet" href="../../css/owl.carousel.css" />
+      <link rel="stylesheet" href="../../css/animate.css" />	
+      <link href="../../img/volume.png" rel="shortcut icon"/>
+<link rel="stylesheet" type="text/css" href="../../css/designtableforlist.css">
+<link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
+
+<link rel="stylesheet" href="../../css/style.css" />
           <script src="javascriptprocess.js"></script>
+
+          <style>
+.modal1{
+  position: ar;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  justify-content:center;
+  align-items:center;
+  
+
+  }
+.modal1_contents{
+    background-color:red;
+    padding: 1rem 4rem;
+    margin: -1rem;
+
+    }
+.modal1_close-bar{
+  display:flex;
+  justify-content: flex-end;
+  margin-right: -2rem;
+  margin-top: 1rem;
+}
+.modal1data{
+  float:center;
+  
+}
+
+</style>
       </head>  
       <body> 
-       <header class="header-section">
-              <div class="header-warp">
-                    <div class="logo1 site-logo1"><!-- logo -->
-                        <a href="">
-                          <h1>VOLUME SALON</h1>
-                          <span>Men and Woman</span>
-                        </a>
-                    </div>
-                    <div class="header-right">
-                        <a href="myprofile.php" class="site-btn sb-small" title="MY PROFILE">
-                            <span><i class="fa fa-user-circle fa-2x" ></i></span><?php echo $UserNameValue?></a>
-                              <ul class="sub">
-                                  <li><a href="logout.php"><i class="fa fa-sign-out fa-2x"></i> LOG OUT</a></li>
-                              </ul>
-                    </div>
-                    <div class="header-right1">
-                        <a href="listAppoint.php" class="fa fa-scissors fa-2x" title="Service Render">
-                            <?php if($num>0){?>
-                              <span class="fa fa-circle"></span>
-                              <span class="num"><?php echo $num; ?></span>
-                            <?php } ?></a>
-                    </div>
-                    <ul class="main-menu"><!-- Navigation Menu -->
-                      <li ><a href="home.php">Home</a></li>
-                      <li><a href="about.php">About Us</a></li>
-                      <li><a href="services1.php">Services</a></li>
-                      <li><a href="blog.php">News</a></li>
-                      <li><a href="contact.php">Contact</a></li>
-                    </ul>
-              </div>
-	</header> 
-      <div class="container" style="width:11 00px;">  
+        
+   <?php include_once('../../includes/headerAccount.php');?>             <!-- Header section -->
+   
+   
+   <div class="modal1"> 
+  <div class="modal1_contents">
+    <div class="modal1_close-bar"><span>X</span></div >
+     
+    <div class="modal1data">
+    <h3 style="text-align:center; color:#e22b63"><b>OFFICIAL DETAILS</b></h3>
+    <p>Add Services</p>
+                        
+    
+    <div class="modal-body" id="employee_detail"></div> 
+     </div>
+ 
+</div>
+
+      <div class="container">  
           <h3 align="center"></h3>  
             <br />  
               <div class="table-responsive"> 
                 <h1 class="myAppointh1"><b>MY RESERVATION</b></h1> 
-                    <?php include('buttonmyappointstatus.html'); ?>
+                							<!-- Header section -->
+                    <?php include('../../html/content/buttonmyappointstatus.html'); ?>
                         <table class="responstable"> 
                           <tr> 
                           	<th width="3%">#</th>
@@ -157,13 +188,45 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
                             </a>
                           </div>
                         </div>  
+
                       <div class="modal-body" id="employee_detail"></div>  
+
+
                   <div class="modal-footer">  
                 <h4 style="text-align: center">Thank You! Happy To Serve you.</h4>
             </div>  
           </div>  
       </div>  
  </div>
+ 
+ 
+</div>
+ 
+ 
+ <script src="../../js/jquery-3.2.1.min.js"></script>
+<script src="../../js/jquery-ui.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/owl.carousel.min.js"></script>
+<script src="../../js/circle-progress.min.js"></script>
+<script src="../../js/main.js"></script>
+<!-- <script>
+const toggleModal = () => {
+  document.querySelector('.modal')
+    .classList.toggle('modal-hidden');
+  
+}
+document.querySelector('#show-modal')
+  .addEventListener('click', toggleModal);
+
+document.querySelector('#learn-more')
+  .addEventListener('#submit', (event) => {
+  event.preventDefault();
+  toggleModal();
+});
+
+document.querySelector('.modal_close-bar')
+  .addEventListener('click', toggleModal);</script> -->
+
 <?php } #first else in top checking end braket ?>
 
 

@@ -2,11 +2,10 @@
 session_start();
 error_reporting(0);
 include('../Database/dbconnection.php');
-
+$uid = $_SESSION['userID']; 
 $reservNum = $_GET['reserv'];
 
 // done deone
-
 //LOGIN PROCESS:  press this will be the process from file of login.php
 if(isset($_POST['login'])){
         $email=$_POST['email'];
@@ -49,23 +48,23 @@ $phonenumberuserConnectedCheck = mysqli_query($con,"select userphonenumber from 
 if(strlen($password) < 5 && strlen($cpassword) < 5){
       $Error_Register = "<div class='alert alert-danger'>* Password can not be less than 5 characters</div>"; 
       $_SESSION['error_register'] =  $Error_Register; 
-      header('location: register.php');  
+      header('location: /../../homepage/control/register/register.php');  
 }else if(strlen($password) > 30 && strlen($cpassword) > 30){
       $Error_Register = "<div class='alert alert-danger'>* Password can not be more than 15 characters</div>";
       $_SESSION['error_register'] =  $Error_Register;      
-      header('location: register.php');  
+      header('location: /../../homepage/control/register/register.php');  
 }else if($password != $cpassword){
       $Error_Register = "<div class='alert alert-danger'>* Password are not same</div>";
       $_SESSION['error_register'] =  $Error_Register;     
-      header('location: register.php'); 
+      header('location: /../../homepage/control/register/register.php'); 
 }else if( mysqli_fetch_array($phonenumberuserConnectedCheck)>0){
       $Error_Register= "<div class='alert alert-danger'>Sorry this number "." $phonenumber"." is Already Exist!</div>";
       $_SESSION['error_register'] =  $Error_Register;
-      header('location: register.php');  
+      header('location: /../../homepage/control/register/register.php');  
 }else if( mysqli_fetch_array($emailuserConnectedCheck)>0){
-      $Error_Register= "<div class='alert alert-danger'>Sorry your Email is Already Exist! <br> <a href='"."login.php"."'>Click here to Log In</a></div>";
+      $Error_Register= "<div class='alert alert-danger'>Sorry that Email is Already Exist! <br> <a href='"."login.php"."'>Click here to Log In</a></div>";
       $_SESSION['error_register'] =  $Error_Register;
-      header('location: register.php');  
+      header('location: /../../homepage/control/register/register.php');  
 }else{   
         $result = mysqli_query($con,"
         insert into tblusers (userfirstname, userlastname, usermidlename, useremail,userpassword,userphonenumber) 
@@ -73,14 +72,49 @@ if(strlen($password) < 5 && strlen($cpassword) < 5){
 
         if($result){
             $_SESSION['email']=$email;
-            header("location: addressform.php");
+            header("location: /../../homepage/control/register/addressform.php");
         }else{
             $Error_Register= "<div class='alert alert-danger'>Erro Insert Data!</div>";
             $_SESSION['error_register'] =  $Error_Register;
-            header('location: register.php');  
+            header('location: /../../homepage/control/register/register.php');  
         }
       }
 }
+
+//ADDRESS PROCESS:  press this will be the process from file of addressform.php
+if(isset($_POST['submitAddressData'])){
+        $email         = strtolower($_POST['email']);
+        $Housenumber   = ucwords($_POST['housenumber']);
+        $Streetname    = ucwords($_POST['streetname']);
+        $Barangay      = ucwords($_POST['barangay']);
+        $province      = ucwords($_POST['provice']);
+        $City          = ucwords($_POST['city']);
+        $Country       = ucwords($_POST['country']);
+        $zipcode       = $_POST['zipcode'];
+        
+    $emailuserConnectedCheck = mysqli_query($con,"select user_id from tblusers where useremail = '$email' ");
+    $result = mysqli_fetch_array($emailuserConnectedCheck);
+
+    if($result>0){
+      
+      $id = $result['user_id'];
+        $result1 = mysqli_query($con,"insert into 
+                                          tbluseraddress (userid, houseNumber, streetName, barangay,city,province,country,zipCode) 
+                                                   value ('$id','$Housenumber', '$Streetname', '$Barangay', '$City','$province', '$Country','$zipcode')");
+        if($result1){
+             echo "<script>alert('Successful Created Your Account');</script>"; 
+             session_destroy();
+              header("location: /../../homepage/control/register/login.php");
+        }else{
+             echo "<script>alert('Error input data');</script>"; 
+         
+        }
+   
+      }else{  
+           echo "<script>alert('Not get data');</script>"; 
+          
+      }
+} 
 
   
 //ADD reservation to tbl_edit_user_reservation PROCESS:  press this will be the process from file index.php and addservice.php
@@ -89,16 +123,17 @@ if(isset($_POST['submitreservation'])){
         $services  = $_POST['service'];
         $Message   = $_POST['Message'];
         $uid       = $_SESSION['userID'];
-        $aptnumber = mt_rand(100000000, 999999999);
+        $aptnumber = mt_rand(100000000, 999999999); //random reference service id: unique
         $adate     = date("Y-m-d", strtotime($_POST['select_date']));
 
-    $query=mysqli_query($con,"INSERT INTO  tbl_edit_user_reservation(user_id, edit_ReservAptNumber, edit_Reserv_Date, edit_Reserv_Time, edit_service_id, edit_Message ) VALUE ( '$uid', '$aptnumber', '$adate', '$atime', '$services', '$Message')");
+    $query=mysqli_query($con,"INSERT INTO  tbl_edit_user_reservation(user_id, edit_ReservAptNumber, edit_Reserv_Date, edit_Reserv_Time, edit_service_id, edit_Message )
+                                    VALUE ( '$uid', '$aptnumber', '$adate', '$atime', '$services', '$Message')");
 
         if ($query){
             $_SESSION['userID'] = $uid;
-            header('location: listAppoint.php');
+            header('location: /../../homepage/control/mainprocessreservation/listAppoint.php');
         }else{
-            $msg="Something Went Wrong. Please try again";
+            $msg="Something Went Wrong. Please try again"; //need to add error this to display in index.php with array
         }
 }   
 
@@ -119,10 +154,10 @@ if(isset($_POST['submitEditDone'])){
           $sql = "DELETE FROM tbl_edit_user_reservation WHERE edit_ReservAptNumber = $aptnumber ";
             $queryResult= mysqli_query($con,$sql);
             if($queryResult) {
-                echo "<script>window.location.href = 'listAppoint.php'</script>";  
+                echo "<script>window.location.href = '/../../homepage/control/mainprocessreservation/listAppoint.php'</script>";  
             }else{
                 echo "<script>alert('Reservation has not Sent.');</script>"; 
-                echo "<script>window.location.href = 'listAppoint.php'</script>";  
+                echo "<script>window.location.href = '/../../homepage/control/mainprocessreservation/listAppoint.php'</script>";  
             }
     }else{
       $msg="Something Went Wrong. Please try again";
@@ -137,7 +172,7 @@ if(isset($_POST["action"])){
     if($_POST["action"] == "category"){
           $query   = "SELECT ServiceName, Service_id FROM tblservices WHERE category_id = '".$_POST["query"]."'";
           $result  = mysqli_query($con, $query);
-          $output .= '<option value="">Select Service</option>';
+          $output .= '<option value="">Select Service2</option>';
 
         while($row = mysqli_fetch_array($result)){
             $output .= '<option value="'.$row["Service_id"].'">'.$row["ServiceName"].'</option>';
@@ -150,7 +185,7 @@ if(isset($_POST["action"])){
     if($_POST["action"] == "service"){
           $query = "SELECT ServiceName, Service_id FROM tblservices WHERE category_id = '".$_POST["query"]."'";
           $result = mysqli_query($con, $query);
-          $output .= '<option value="">Select Service</option>';
+          $output .= '<option value="">Select Service1</option>';
 
         while($row = mysqli_fetch_array($result)){
             $output .= '<option value="'.$row["Service_id"].'">'.$row["ServiceName"].'</option>';
@@ -165,10 +200,10 @@ if(isset($_POST["action"])){
 if(isset($reservNum)){
     $queryResult= mysqli_query($con,"DELETE FROM tbl_edit_user_reservation WHERE edit_ReservAptNumber = $reservNum ");
     if($queryResult) {
-        echo "<script>window.location.href = 'listAppoint.php'</script>";  
+        echo "<script>window.location.href = '/../../homepage/control/mainprocessreservation/listAppoint.php'</script>";  
     }else {
         echo "<script>alert('Reservation has not Cancel.');</script>"; 
-        echo "<script>window.location.href = 'listAppoint.php'</script>";  
+        echo "<script>window.location.href = '/../../homepage/control/mainprocessreservation/listAppoint.php'</script>";  
     }
 }
 
@@ -263,7 +298,7 @@ if(isset( $_POST['submitimage'])){
 
   $userid         = $_POST['idofuser'];
   $name           = $_FILES['imagename']['name'];
-  $target_dir     = "img/profile/";
+  $target_dir     = "../img/profile/";
   $target_file    = $target_dir . basename($_FILES["imagename"]["name"]);
   $imageFileType  = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));                        // Select file type
 
@@ -273,7 +308,7 @@ if(isset( $_POST['submitimage'])){
     $query = "update tblusers set userprofileimage ='".$name."' where user_id = '".$userid ."'"; // Insert record  
      mysqli_query($con,$query);
      move_uploaded_file($_FILES['imagename']['tmp_name'],$target_dir.$name);                     // Upload file
-     header('location: myprofile.php');                    
+     header('location: /../../homepage/control/register/myprofile.php');                    
   }
 }
 
@@ -291,12 +326,18 @@ if(isset($_POST['submitpersonaldetails'])){
   $email = $_POST['email'];
 
 if(strlen($password) < 5 && strlen($cpassword) < 5){
-      $Error= "<div class='alert alert-danger'>* Password can not be less than 5 characters</div>";    
+       $Error_Personal_Details = "<div class='alert alert-danger' style='text-align:center;'>* Password can not be less than 5 characters</div>";
+        $_SESSION['error_personal_details'] = $Error_Personal_Details;
+        header('location: /../../homepage/control/register/myprofile.php');    
 }else if(strlen($password) > 30 && strlen($cpassword) > 30){
-      $Error = "<div class='alert alert-danger'>* Password can not be more than 15 characters</div>";     
+       $Error_Personal_Details = "<div class='alert alert-danger' style='text-align:center;'>* Password can not be more than 15 characters</div>";
+        $_SESSION['error_personal_details'] = $Error_Personal_Details;
+        header('location: /../../homepage/control/register/myprofile.php');   
 }
 else if($password != $cpassword){
-      $Error= "<div class='alert alert-danger'>* Password are not the same</div>";
+       $Error_Personal_Details = "<div class='alert alert-danger' style='text-align:center;'>* Password are not the same</div>";
+        $_SESSION['error_personal_details'] = $Error_Personal_Details;
+        header('location: /../../homepage/control/register/myprofile.php');
 }
 else{
 
@@ -311,15 +352,14 @@ else{
                                 where user_id   =  $uid";
       $resultUpdaeUserdetails = mysqli_query($con, $queryUpdateUserDetails);
       if($resultUpdaeUserdetails){
-        $Error_Details = "<div class='alert alert-success' style='text-align:center;'>Update Succesfully</div>";
-        $_SESSION['error_details'] =$Error_Details;
-        header('location: myprofile.php');
+        $Error_Personal_Details = "<div class='alert alert-success' style='text-align:center;'>Update Succesfully</div>";
+        $_SESSION['error_personal_details'] =$Error_Personal_Details;
+        header('location: /../../homepage/control/register/myprofile.php');
       }else{
-        $Error_Details = "<div class='alert alert-danger' style='text-align:center;'>Not Succesfully update</div>";
-        $_SESSION['error_details'] = $Error_Details;
-        header('location: myprofile.php');
+        $Error_Personal_Details = "<div class='alert alert-danger' style='text-align:center;'>Not Succesfully update</div>";
+        $_SESSION['error_personal_details'] = $Error_Personal_Details;
+        header('location: /../../homepage/control/register/myprofile.php');
       }
-
 }
 
 }
@@ -337,7 +377,6 @@ if(isset($_POST['submitaddress'])){
   $country     = ucwords($_POST['Country']);
   $zipCode     = $_POST['Zip_Code'];
 
-
     $queryUpdateUserDetailsaddress = "update tbluseraddress
                                 set  
                                 houseNumber = '$houseNumber',
@@ -351,13 +390,13 @@ if(isset($_POST['submitaddress'])){
 
       $resultUpdaeUserdetails = mysqli_query($con, $queryUpdateUserDetailsaddress);
       if($resultUpdaeUserdetails){
-          $Error_Details = "<div class='alert alert-success' style='text-align:center;'>Update Succesfully your Address</div>";
-          $_SESSION['error_details'] = $Error_Details;
-          header('location: myprofile.php');
+          $Error_Personal_Details = "<div class='alert alert-success' style='text-align:center;'>Update Succesfully your Address</div>";
+          $_SESSION['error_personal_details'] = $Error_Personal_Details;
+          header('location: /../../homepage/control/register/myprofile.php');
       }else{
-          $Error_Details = "<div class='alert alert-danger' style='text-align:center;'>Not Succesfully update your Address</div>";
-          $_SESSION['error_details'] = $Error_Details;
-          header('location: myprofile.php');
+          $Error_Personal_Details = "<div class='alert alert-danger' style='text-align:center;'>Not Succesfully update your Address</div>";
+          $_SESSION['error_details'] = $Error_Personal_Details;
+          header('location: /../../homepage/control/register/myprofile.php');
       }
 }
 

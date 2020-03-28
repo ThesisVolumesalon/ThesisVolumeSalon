@@ -26,7 +26,7 @@ $Error_Register = $_SESSION['error_register'];?>
 </head>
   <body>
       <?php include('../../html/header.html'); ?><!-- Header section end -->
-          <form class="login" action="processofhomepage.php" method="POST">
+          <form class="login" action="/../homepage/control/processofhomepage.php" method="POST">
                 <h1 class="login-title">Sign Up</h1>
 
                   <?php  if(isset($Error_Register)): ?>

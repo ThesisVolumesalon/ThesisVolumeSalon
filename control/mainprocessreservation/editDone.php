@@ -1,7 +1,7 @@
 <?php 
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');
+include('../../Database/dbconnection.php');
 $reservNum = $_GET['reserv'];
 
 		$category = '';
@@ -24,15 +24,29 @@ $reservNum = $_GET['reserv'];
 <html>
 <head>
 	<title>EDIT RESERVATION | SUBMIT</title>
+	<meta charset="UTF-8">
+      <meta name="description" content="Volume Salon">
+      <meta name="keywords" content="Volume, Volume, creative, html">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="../img/volume.png" rel="shortcut icon" /><!-- Favicon -->
+      <link rel="stylesheet" href="../../css/bootstrap.min.css" /><!-- Stylesheets -->
+      <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+      <link rel="stylesheet" href="../../css/jquery-ui.min.css" />
+      <link rel="stylesheet" href="../../css/flaticon.css" />
+      <link rel="stylesheet" href="../../css/owl.carousel.css" />
+      <link rel="stylesheet" href="../../css/style.css" />
+      <link rel="stylesheet" href="../../css/animate.css" />	
+      <link href="img/volume.png" rel="shortcut icon"/>
+      <link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
 </head>
-	 <?php include_once('includes/headerAccount.php');?>
+	 <?php include_once('../../includes/headerAccount.php'); ?>
 <body>
 	<div class="container">
 		<div class="hs-item">
 			<div class="hs-content text-white">
 				<h4 class="fw-title"><i class="flaticon-039-make-up"></i>Edit Service</h4>
 				
-					<form class="fw-contact-form" action="processofhomepage.php" method="POST">
+					<form class="fw-contact-form" action="/../homepage/control/processofhomepage.php" method="POST">
 						<br/>
 						<?php while ($Result_Value_Row=mysqli_fetch_array($Result_Value)) { ?>
 						<input type="hidden" name="idofuser" value="<?php echo $Result_Value_Row['user_id'] ?>">
@@ -67,15 +81,16 @@ $reservNum = $_GET['reserv'];
 								<a href="listAppoint.php" class="site-btn sb-big">CANCEL</a>
 							</form>
 						</div>
-					<div class="hs-preview set-bg" data-setbg="img/sev.jpg"></div>
+					<div class="hs-preview set-bg" data-setbg="../../img/sev.jpg"></div>
 				</div>
 		</div>
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="../../js/jquery-3.2.1.min.js"></script>
+	<script src="../../js/jquery-ui.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/owl.carousel.min.js"></script>
+	<script src="../../js/circle-progress.min.js"></script>
+	<script src="../../js/main.js"></script>
+	<script src="../../js/javascriptprocess.js"></script>
 </body>
 </html>

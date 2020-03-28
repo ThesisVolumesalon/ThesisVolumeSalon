@@ -1,31 +1,47 @@
 <?php
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');
-$Error_Details = $_SESSION['error_details'];
+include('../../Database/dbconnection.php'); 
+if(strlen($_SESSION['userID']==0)){                               #first if checking open braket true
+  header('location: /../../homepage/index.php');                   #if true jump to home.html
+}                                                                 #first if checking open braket true
+  else{ 
+$Error_Personal_Details = $_SESSION['error_personal_details'];
 
       $uid = $_SESSION['userID']; 
-
 
       $sql = "select userprofileimage from tblusers where user_id = $uid ";
       $result = mysqli_query($con,$sql);
       $rowdatas = mysqli_fetch_array($result);
 
       $image = $rowdatas['userprofileimage'];
-      $image_src = "img/profile/".$image;
+      $image_src = "../../img/profile/".$image;
 
  ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>My Profile</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="javascriptprocess.js"></script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      
+      <meta name="description" content="Volume Salon">
+      <meta name="keywords" content="Volume, Volume, creative, html">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="../../img/volume.png" rel="shortcut icon" /><!-- Favicon -->
+      <link rel="stylesheet" href="../../css/bootstrap.min.css" /><!-- Stylesheets -->
+      <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+      <link rel="stylesheet" href="../../css/jquery-ui.min.css" />
+      <link rel="stylesheet" href="../../css/flaticon.css" />
+      <link rel="stylesheet" href="../../css/owl.carousel.css" />
+      <link rel="stylesheet" href="../../css/style.css" />
+      <link rel="stylesheet" href="../../css/animate.css" />
+      <link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
+
   </head>
   <style >
   .container{
@@ -72,12 +88,10 @@ input{
 
 <body>
 
-   <?php include_once('includes/headerAccount.php');?>
- 
-<div class="container bootstrap snippet">
-    <div class="row">
-      <div class="col-sm-10"><h1 class="labelforinput">My Profile</h1></div>
-      
+   <?php include_once('../../includes/headerAccount.php');?>
+    <div class="container bootstrap snippet">
+        <div class="row">
+          <div class="col-sm-10"><h1 class="labelforinput">My Profile</h1></div>
     </div>
     
 
@@ -93,8 +107,8 @@ input{
 <?php } ?>
 
         <h6>Upload a different photo</h6>
-        <form action="processofhomepage.php" method="POST" enctype="multipart/form-data">
-          <input type="number" hidden="" name="idofuser" value="<?php echo $uid; ?>">
+        <form action="/../homepage/control/processofhomepage.php" method="POST" enctype="multipart/form-data">
+        <input type="number" hidden="" name="idofuser" value="<?php echo $uid; ?>">
         <input type="file" required="" name="imagename" class="text-center center-block file-upload"> 
         <input type="submit" name="submitimage" value="Upload Profile Picture">
         </form>
@@ -121,7 +135,7 @@ input{
                 <div class="tab-pane active" id="home">
                 <hr>
 
-                  <form class="form" action="processofhomepage.php" method="post" >
+                  <form class="form" action="/../homepage/control/processofhomepage.php" method="post" >
                    <?php 
 $data = "select * from tblusers where user_id = $uid";
 
@@ -129,8 +143,8 @@ $query = mysqli_query($con, $data);
 while($rowdata=mysqli_fetch_array($query)){
 ?>
                       <div class="form-group">
-                        <?php  if(isset($Error_Details)): ?>
-                          <span><?php echo $Error_Details; ?></span>
+                        <?php  if(isset($Error_Personal_Details)): ?>
+                          <span><?php echo $Error_Personal_Details; ?></span>
                         <?php endif ?>
                           
                           <div class="col-xs-6">
@@ -203,7 +217,7 @@ while($rowdata=mysqli_fetch_array($query)){
                <h2></h2>
                
                <hr>
-                  <form class="form" action="processofhomepage.php" method="POST" id="registrationForm">
+                  <form class="form" action="/../homepage/control/processofhomepage.php" method="POST" id="registrationForm">
                       <div class="form-group">
                            <?php 
 
@@ -275,12 +289,14 @@ while($rowdata1=mysqli_fetch_array($query1)){ ?>
         </div><!--/col-9-->
     </div><!--/row-->
              
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/jquery-ui.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/circle-progress.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../../js/jquery-3.2.1.min.js"></script>
+  <script src="../../js/jquery-ui.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/owl.carousel.min.js"></script>
+  <script src="../../js/circle-progress.min.js"></script>
+  <script src="../../js/main.js"></script>
+  <script src="../../js/javascriptprocess.js"></script>
 
 </body>
 </html>
+<?php  } ?>

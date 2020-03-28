@@ -20,7 +20,7 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
 <html>
 <head>
   <title>My Reservation</title>
-  <meta charset="UTF-8">
+      <meta charset="UTF-8">
       <meta name="description" content="Volume Salon">
       <meta name="keywords" content="Volume, Volume, creative, html">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,11 +30,13 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
       <link rel="stylesheet" href="../../css/jquery-ui.min.css" />
       <link rel="stylesheet" href="../../css/flaticon.css" />
       <link rel="stylesheet" href="../../css/owl.carousel.css" />
-      <link rel="stylesheet" href="../../css/style.css" />
       <link rel="stylesheet" href="../../css/animate.css" />	
-      <link href="img/volume.png" rel="shortcut icon"/>
-      <link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
-      <link rel="stylesheet" type="text/css" href="../../css/tabledesign.css">
+      <link href="../../img/volume.png" rel="shortcut icon"/>
+<link rel="stylesheet" href="../../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
+
+<link rel="stylesheet" type="text/css" href="../../css/designtableforlist.css">
+
 </head>
 
 <body>
@@ -51,7 +53,8 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
               </thead>
               <tbody>
             <?php  if($num>0){                                       #if $num bracket 1>0= true
-                    while ($row=mysqli_fetch_array($retValue)){     #while open bracket ?>
+                    while ($row=mysqli_fetch_array($retValue)){     #while open bracket 
+                    ?>
               <tr>
                   <td><?php echo $cnt;?></td> 
                   <td><?php echo $row['ServiceName'];?></td> 
@@ -62,7 +65,7 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
                              echo "On My Process.."; } ?></td>
                   <td style="text-align: center">
                       <a href="editDone.php?reserv=<?php echo $row['edit_ReservAptNumber'];?>"><i class="fa fa-pencil fa-2x "></i></a><span style="font-size: 2em"> | </span>
-                      <a href="processofhomepage.php?reserv=<?php echo $row['edit_ReservAptNumber'];?>"><i class="fa fa-times fa-2x "></i></a>
+                      <a href="../processofhomepage.php?reserv=<?php echo $row['edit_ReservAptNumber'];?>"><i class="fa fa-times fa-2x "></i></a>
                   </td> 
               <?php 
                   $cnt=$cnt+1;                                      #count increament every while loop process 

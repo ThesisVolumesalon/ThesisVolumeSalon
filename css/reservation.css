@@ -100,6 +100,7 @@ h1 span {
     float: center;
     width: 100% auto;
 }
+
 .logo a{
   text-decoration: none;
 }
@@ -121,14 +122,12 @@ h1 span {
 .modal-header .logo:hover a span{
   color: #e22b63;
 }
-
 .header-section {
   background: #1e1e1e;
   padding: 0 15px;
   border-bottom: 2px solid #e22b63;
   
 }
-
 .header-warp {
 
   max-width: 1613px;
