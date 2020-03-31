@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteRule "main"         index.php [NC,L]
+RewriteRule "Our-News"     includes/news.php [NC,L]
+RewriteRule "About-Us"     includes/about.php [NC,L]
+RewriteRule "Our-Contacts" includes/contact.php [NC,L]
+RewriteRule "Our-Services" includes/services.php [NC,L]
+
