@@ -228,19 +228,19 @@ if(isset($_POST['submitforgotpassword'])){
               $Error_For_Forgot_Password = "<div class='alert alert-danger' style='border-color:red;'>This Email ".
                        "<span style='color:red;'>"."$email"."</span>"." is not exist! <br><a href='"."register.php"."'> Click here to Register</a></div>";
               $_SESSION['error_forgot_password'] = $Error_For_Forgot_Password;
-              header('location: forgotPassword.php');
+              header('location: /../../homepage/control/register/forgotPassword.php');
           }else if(mysqli_fetch_array($lastnameuserConnectedCheck)<1){
               $Error_For_Forgot_Password = "<div class='alert alert-danger'>This last name "."<span style='color:red;'>"."$lastname"."</span>"." is not exist!</div>";
               $_SESSION['error_forgot_password'] = $Error_For_Forgot_Password;
-              header('location: forgotPassword.php');
+              header('location: /../../homepage/control/register/forgotPassword.php');
           }else if(mysqli_fetch_array($phoneuserConnectedCheck)<1){
               $Error_For_Forgot_Password = "<div class='alert alert-danger'>This Number "."$phonenumber"." is not exist!</div>";
               $_SESSION['error_forgot_password'] = $Error_For_Forgot_Password;
-              header('location: forgotPassword.php');
+              header('location: /../../homepage/control/register/forgotPassword.php');
           }else if (mysqli_fetch_array($CompleteConnectedCheck)<1) {
               $Error_For_Forgot_Password = "<div class='alert alert-danger'>Incorrect Details!</div>";
               $_SESSION['error_forgot_password'] = $Error_For_Forgot_Password;
-              header('location: forgotPassword.php');
+              header('location: /../../homepage/control/register/forgotPassword.php');
           }else{
               $query = mysqli_query($con,"SELECT user_id, 
                                                  concat(userfirstname,' ',
@@ -251,9 +251,9 @@ if(isset($_POST['submitforgotpassword'])){
                                                  userphonenumber = '$phonenumber' ");
               $rowResult = mysqli_fetch_array($query);
                   if($rowResult > 0){
-                        $_SESSION['userId']= $rowResult['user_id'];
+                        $_SESSION['userID']= $rowResult['user_id'];
                         $_SESSION['username']= $rowResult['fullname'];
-                        header("location: changepassword.php");
+                        header("location: /../../homepage/control/register/changepassword.php");
                   }
           }  
 }
@@ -267,26 +267,26 @@ if(isset($_POST['submitchangepassword'])){
       if(strlen($newpassword) < 5 && strlen($retypenewpassword) < 5){
             $Error_Change_Password= "<div class='alert alert-danger'>Password can not be less than 5 characters</div>";  
             $_SESSION['error_change_password'] = $Error_Change_Password;
-            header('location: changepassword.php');
+            header('location: /../../homepage/control/register/changepassword.php');
       }else if(strlen($newpassword) > 15 && strlen($retypenewpassword) > 15){
             $Error_Change_Password = "<div class='alert alert-danger'>Password can not be more than 15 characters</div>";   
             $_SESSION['error_change_password'] = $Error_Change_Password;
-            header('location: changepassword.php');  
+            header('location: /../../homepage/control/register/changepassword.php');  
       }else if($newpassword != $retypenewpassword){
             $Error_Change_Password= "<div class='alert alert-danger'>Password are not the same</div>";
             $_SESSION['error_change_password'] = $Error_Change_Password;
-            header('location: changepassword.php');
+            header('location: /../../homepage/control/register/changepassword.php');
       }else{
-          $updatePasswordCheckPoint = mysqli_query($con,"update tblusers set userpassword = '$newpassword' where user_id = '$user_id' ");
+          $updatePasswordCheckPoint = mysqli_query($con,"update tblusers set userpassword = '$newpassword' where user_id = '$uid' ");
               if ($updatePasswordCheckPoint){
-                  echo "<script>alert('Sucessfull Reset Password.');</script>";
+                  echo "<script>alert('Sucessfull Reset Your Password.');</script>";
                   session_destroy();
-                  echo "<script>window.location.href = 'login.php'</script>"; 
+                  echo "<script>window.location.href = '/../../homepage/control/register/login.php'</script>"; 
 
               }else{
                   $Error = "<div class='alert alert-danger'>Not Update Password</div>";
                   $_SESSION['error_change_password'] = $Error_Change_Password;
-                  header('location: changepassword.php');
+                  header('location: /../../homepage/control/register/changepassword.php');
               }
       }
 }

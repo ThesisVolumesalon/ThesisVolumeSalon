@@ -16,12 +16,9 @@ if(strlen($_SESSION['userID']==0)){ ?>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<link href="img/volume.png" rel="shortcut icon" /><!-- Favicon -->
 				<link rel="stylesheet" href="css/bootstrap.min.css" /><!-- Stylesheets -->
-				<link rel="stylesheet" href="css/font-awesome.min.css" />
-				<link rel="stylesheet" href="css/jquery-ui.min.css" />
 				<link rel="stylesheet" href="css/flaticon.css" />
 				<link rel="stylesheet" href="css/owl.carousel.css" />
 				<link rel="stylesheet" href="css/style.css" />
-				<link rel="stylesheet" href="css/animate.css" />
 			</head>
 			<body>
 				<?php include('html/header.html'); ?>							<!-- Header section -->
@@ -45,9 +42,7 @@ if(strlen($_SESSION['userID']==0)){ ?>
 			</body>
 			<script src="js/jquery-3.2.1.min.js"></script>
 			<script src="js/jquery-ui.min.js"></script>
-			<script src="js/bootstrap.min.js"></script>
 			<script src="js/owl.carousel.min.js"></script>
-			<script src="js/circle-progress.min.js"></script>
 			<script src="js/main.js"></script>
 		</html>
 

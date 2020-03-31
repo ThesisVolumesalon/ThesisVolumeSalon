@@ -42,7 +42,7 @@ $uid = $_SESSION['userID'];
 							<span><i class="fa fa-user-circle fa-2x" ></i></span><?php echo $Name_Of_User?>
 						</a>
 							<ul class="sub">
-								<li><a href="/../../homepage/control/mainprocessreservation/myappointstatus.php"><i class="fa fa-tags fa-2x"></i> MY RESERVATION</a></li>
+								<li class="reservationtag"><a href="/../../homepage/control/mainprocessreservation/myreservation.php"><i class="fa fa-tags fa-2x"></i> MY RESERVATION</a></li>
 								<li><a href="/../../homepage/control/register/logout.php"><i class="fa fa-sign-out fa-2x"></i> LOG OUT</a></li>
 							</ul>
 					</div>

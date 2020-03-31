@@ -44,12 +44,12 @@ $select = "SELECT  user_id,
                     AD.userid = $uid  and 
                     ap.userid = $uid  and 
                     ap.Services_id = ser.Service_id and
-                    ap.beautician_id =  employ.employeeId and Status = 2 ORDER BY AptDate ";
+                    ap.beautician_id =  employ.employeeId and Status = '' ORDER BY AptDate ";
 $result = mysqli_query($con, $select);  ?>  
  <!DOCTYPE html>  
  <html>  
       <head>  
-           <title>My Rejected Reservation</title>  
+           <title>My Reservation Status</title>  
               <meta charset="UTF-8">
               <meta name="description" content="Volume Salon">
               <meta name="keywords" content="Volume, Volume, creative, html">

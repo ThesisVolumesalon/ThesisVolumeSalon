@@ -26,7 +26,7 @@ $Error_Change_Password = $_SESSION['error_change_password'];
 </head>
   <body>
       <?php include('../../html/header.html'); ?><!-- Header section end -->
-        <form class="login" action="processofhomepage.php" method="post" name="login">
+        <form class="login" action="/../homepage/control/processofhomepage.php" method="post" name="login">
             <h1 class="login-title"> New Password </h1>
             
               <?php  if(isset($Error_Change_Password)): ?>

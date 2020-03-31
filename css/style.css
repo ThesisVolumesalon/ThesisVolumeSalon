@@ -1688,15 +1688,13 @@ p.squared {
 		position: relative;
 		text-align: center;
 		padding: 1px 1px;
-	}
-
+}
 .main-menu {
 	display: inline-block;
 	list-style: none;
 	float: center;
 	width: 100%;
 }
-
 .main-menu li {
 	display: inline;
 }
@@ -1833,7 +1831,7 @@ p.squared {
 
 }
 
-/* Small Mobile :320px. */
+/* Small Mobile : px. */
 
 @media only screen and (max-width: 479px) {
 	.hs-content h2 {

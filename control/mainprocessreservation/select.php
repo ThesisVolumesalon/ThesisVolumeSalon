@@ -1,12 +1,12 @@
 <?php  
 
+include('../../Database/dbconnection.php');  
  if(isset($_POST["employee_id"])){  
   $AptNumber = $_POST["employee_id"];
   
       $output = '';  
-      $connect = mysqli_connect("localhost", "root", "", "bpmsdb"); 
+     
 
-      
 $select = " SELECT  
               CONCAT(userfirstname ,' ',
                      usermidlename, ' ',
@@ -49,7 +49,7 @@ $select = " SELECT
                      APPOINT.beautician_id =  EMPLOY.employeeId AND 
                      APPOINT.AptNumber = $AptNumber";
       
-      $result = mysqli_query($connect, $select); 
+      $result = mysqli_query($con, $select); 
       if($result){
       $output .= '  
       <div class="table-responsive">  

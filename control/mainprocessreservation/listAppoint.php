@@ -1,7 +1,7 @@
 <?php 
 session_start();
 error_reporting(0);
-include('../../Database/dbconnection.php');                             #Database connection
+include('../../Database/dbconnection.php');                       #Database connection
 if(strlen($_SESSION['userID']==0)){                               #first if checking open braket true
   header('location:  /../../homepage/index.php');                 #if true jump to home.html
                                                                   #first if checking open braket true
@@ -32,10 +32,9 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
       <link rel="stylesheet" href="../../css/owl.carousel.css" />
       <link rel="stylesheet" href="../../css/animate.css" />	
       <link href="../../img/volume.png" rel="shortcut icon"/>
-<link rel="stylesheet" href="../../css/style.css" />
-<link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
-
-<link rel="stylesheet" type="text/css" href="../../css/designtableforlist.css">
+      <link rel="stylesheet" href="../../css/style.css" />
+      <link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
+      <link rel="stylesheet" type="text/css" href="../../css/designtableforlist.css">
 
 </head>
 
@@ -64,7 +63,7 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
               <?php if($row['edit_reserv_status'] == 0){          #if status 0 or false show echo the On Process...
                              echo "On My Process.."; } ?></td>
                   <td style="text-align: center">
-                      <a href="editDone.php?reserv=<?php echo $row['edit_ReservAptNumber'];?>"><i class="fa fa-pencil fa-2x "></i></a><span style="font-size: 2em"> | </span>
+                      <a href="/../../homepage/editdone.php?reserv=<?php echo $row['edit_ReservAptNumber'];?>"><i class="fa fa-pencil fa-2x "></i></a><span style="font-size: 2em"> | </span>
                       <a href="../processofhomepage.php?reserv=<?php echo $row['edit_ReservAptNumber'];?>"><i class="fa fa-times fa-2x "></i></a>
                   </td> 
               <?php 
@@ -75,12 +74,12 @@ if(strlen($_SESSION['userID']==0)){                               #first if chec
                   <td colspan="8" align="center"> No Pending Serrvice record found!</td>
               <?php  } ?>                                           <!-- else end bracket -->
                   <tr>
-                      <td style="border-style: none;"><a href="addservice.php"  class="site-btn sb-big">ADD SERVICE</a></td>
+                      <td style="border-style: none;"><a href="/../../homepage/addservice.php"  class="site-btn sb-big">ADD SERVICE</a></td>
                   </tr>
           </table>
 </body>
   <!--====== Javascripts & Jquery ======-->
-  <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
     <script src="../../js/jquery-ui.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
     <script src="../../js/owl.carousel.min.js"></script>

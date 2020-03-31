@@ -1,338 +1,37 @@
-
-button a{
-  height: 3pc;
-    border-radius: 10px;
-    color: black;
-    font-size: 22px;
-    background-color: #e22b63;
-}
-.responstable {
-  margin: 1em 0;
-  width: 100%;
-  overflow: hidden;
-  background: #FFF;
-  color: black;
-
-}
-.responstable tr {
-  display: nome;
-}
-.responstable tr:nth-child(odd) {
-  background-color: #EAF3F3;
-}
-.responstable th {
-  display: none;
-  border: 1px solid #FFF;
-  background-color: #e22b63;
-  color: #FFF;
-  padding: 1em;
-  font-weight: bold;
-}
-.responstable th:first-child {
-  display: table-cell;
-  text-align: center;
-
-  font-weight: bold;
-}
-.responstable th:nth-child(2) {
-  display: table-cell;
-}
-.responstable th:nth-child(2) span {
-  display: none;
-}
-.responstable th:nth-child(2):after {
-  content: attr(data-th);
-}
-@media (min-width: 480px) {
-  .responstable th:nth-child(2) span {
-    display: block;
-  }
-  .responstable th:nth-child(2):after {
-    display: none;
-  }
-}
-.responstable td {
-  display: block;
-  word-wrap: break-word;
-  max-width: 7em;
-}
-.responstable td:first-child {
-  display: table-cell;
-  text-align: center;
-}
-@media (min-width: 480px) {
-  .responstable td {
-    border: 1px solid #D9E4E6;
-  }
-}
-.responstable th, .responstable td {
-  text-align: left;
-  margin: .5em 1em;
-}
-@media (min-width: 480px) {
-  .responstable th, .responstable td {
-    display: table-cell;
-    padding: 1em;
-  }
-}
-
-body {
-  padding: 0 2em;
-  font-family: Arial, sans-serif;
-  color: #024457;
-  background: #f2f2f2;
-}
-
-h1 {
-  font-family: Verdana;
-  font-weight: normal;
-  color: #024457;
-}
-h1 span {
-  color: #167F92;
-}
 .myAppointh1{
   text-align: center;
+  font-size: 35px;
 }
-.logo {
-    background: #1b1b1b;
-    text-align: center;
-    float: center;
-    width: 100% auto;
+.logo2 {
+  background: #1b1b1b;
+  text-align: center;
+  float: center;
+  width: 100% auto;
 }
-
-.logo a{
+.logo2 a{
   text-decoration: none;
 }
-.logo a h1 {
-    color: #fff;
-    font-size: 2.5em;
-    line-height: 1em;
-    font-weight: 750;
+.logo2 a h1 {
+  color: #fff;
+  font-size: 2.5em;
+  line-height: 1em;
+  font-weight: 750;
 }
-.logo a span {
-    color: #F8F8F8;
-    font-size: 1em;
-    text-align: center;
-    letter-spacing: 5px;
+.logo2 a span {
+  color: #F8F8F8;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 5px;
 }
-.modal-header .logo:hover  a h1{
+.modal-header .logo2:hover  a h1{
   color: #e22b63;
 }
-.modal-header .logo:hover a span{
+.modal-header .logo2:hover a span{
   color: #e22b63;
 }
-.header-section {
-  background: #1e1e1e;
-  padding: 0 15px;
-  border-bottom: 2px solid #e22b63;
-  
+.main-menu li a, .logo a, .header-right a{
+  text-decoration: none;
 }
-.header-warp {
-
-  max-width: 1613px;
-  margin: 0 auto;
-}
-
-.site-logo {
-  display: inline-block;
-}
-
-.nav-switch {
+.reservationtag{
   display: none;
 }
-
-.main-menu {
-  display: inline-block;
-  list-style: none;
-  padding-left: 125px;
-}
-
-.main-menu li {
-  display: inline;
-}
-
-.main-menu li a {
-  display: inline-block;
-  color: #fff;
-  font-size:25px;
-  padding: 39px 10px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.main-menu li a:hover {
-  color: #e22b63;
-
-  text-decoration: none;
-
-}
-
-.main-menu li.active a {
-  background: #e22b63;
-
-}
-
-.main-menu li.active a:hover {
-  color: #fff;
-}
-
-.header-right {
-  float: right;
-  padding-top: 37px;
-}
-
-.header-right .site-btn {
-  margin-left: 7px;
-}
-
-/*logo*/
-
-.header-warp .logo1:hover  a h1{
-  color: #e22b63;
-}
-.header-warp .logo1:hover  a span{
-  color: #e22b63;
-}
-
-.logo1 {
-    background: #1b1b1b;
-    text-align: center;
-    display: inline-block;
-}
-.logo1 a{
-    padding: 3em .3em .1em;
-  text-decoration: none;
-}
-.logo1 a h1 {
-    color: #fff;
-    font-size: 2.5em;
-    line-height: 1em;
-    font-weight: 750;
-}
-.logo1 a span {
-    color: #F8F8F8;
-    font-size: 1em;
-    text-align: center;
-    letter-spacing: 5px;
-}
-
-
-/*for button with name and sub block in line =*/
-
- .sub{
-  display: none; 
-}
-.site-btn {
-  display: inline-block;
-  text-align: center;
-  font-size: 16px;
-  color: #fff;
-  padding: 10px 28px;
-  min-width: 145px;
-  border: 2px solid #e22b63;
-  background: #e22b63;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.site-btn:hover {
-  color: #fff;
-}
-.header-warp .header-right .site-btn:hover{
-  background-color: #1b1b1b;
-  color: #e22b63;
-  text-decoration: none;
-}
-  
-
-
-.header-warp .header-right:hover  .sub {
-  list-style-type: none;
-  border-radius: 0;
-    display: block;
-
-  width: 190px;
-
-
-}
- .header-warp .header-right:hover .sub:last-child{
-  border-bottom: none;
-
-  text-align: left;
-}
-.header-warp .header-right:hover .sub li a{
-  color: #e22b63;
-  font-size: 17px;
-  font-style: bold;
-}
-.header-warp .header-right:hover .sub li span{
-  font-size: 30px;
-}
-.header-warp .header-right:hover .sub li a:hover{
-  color: white;
-  text-decoration: none;
-}
-
-/*Scissor icon redering service float right with beside of button profile*/
-
-.header-right1 {
-  float: right;
-  padding-top: 50px;
-}
-a.fa {
-  position: relative;
-  display: block;
-  height: 50px;
-  width: 50px;
-  color: white;
-  background-size: contain;
-  text-decoration: none;
-}
-a.fa:hover {
-  position: relative;
-  display: block;
-  height: 50px;
-  width: 50px;
-  color:#e22b63;
-  background-size: contain;
-  text-decoration: none;
-}
-
-span.fa-circle {
-  position: absolute;
-  font-size: 0.8em;
-  top: -0.5em;
-  color: red;
-  right: 0.4em;
-}
-span.num {
-  position: absolute;
-  font-size: 0.7em;
-  top: -0.6em;
-  color: #fff;
-  right:0.7em;
-}
-.btn-appoint{
-        text-align: center;
-    }
-    .btn-anchor{
-        color: black;
-        margin: auto;
-        border-radius: 10px;
-        display: inline-block;
-	    text-align: center;
-	    font-size: 16px;
-	    color: black;
-	    padding: 12px 1px;
-	    min-width: 145px;
-	    border: 2px solid #e22b63;
-	    background: #e22b63;
-        text-decoration: none;
-    }
-    .btn-anchor:hover{
-        background-color: pink;
-        text-decoration: none;
-        color:black;
-    }

@@ -1,9 +1,10 @@
+     
 button a{
   height: 3pc;
-    border-radius: 10px;
-    color: black;
-    font-size: 22px;
-    background-color: #e22b63;
+  border-radius: 10px;
+  color: black;
+  font-size: 22px;
+  background-color: #e22b63;
 }
 .responstable {
   margin: 1em 0;
@@ -11,7 +12,9 @@ button a{
   overflow: hidden;
   background: #FFF;
   color: black;
-
+}
+.reservationtag{
+  display: none;
 }
 .responstable tr {
   display: nome;
@@ -42,28 +45,6 @@ button a{
 .responstable th:nth-child(2):after {
   content: attr(data-th);
 }
-.btn-appoint{
-        text-align: center;
-    }
-    .btn-anchor{
-        color: black;
-        margin: auto;
-        border-radius: 10px;
-        display: inline-block;
-	    text-align: center;
-	    font-size: 16px;
-	    color: black;
-	    padding: 12px 1px;
-	    min-width: 145px;
-	    border: 2px solid #e22b63;
-	    background: #e22b63;
-        text-decoration: none;
-    }
-    .btn-anchor:hover{
-        background-color: pink;
-        text-decoration: none;
-        color:black;
-    }
 @media (min-width: 480px) {
   .responstable th:nth-child(2) span {
     display: block;
@@ -76,9 +57,6 @@ button a{
   display: block;
   word-wrap: break-word;
   max-width: 7em;
-}
-.myAppointh1{
-  text-align: center;
 }
 .responstable td:first-child {
   display: table-cell;
@@ -98,6 +76,37 @@ button a{
     display: table-cell;
     padding: 1em;
   }
+}
+.myAppointh1{
+  text-align: center;
+  font-size: 35px;
+}
+.logo2 {
+  background: #1b1b1b;
+  text-align: center;
+  float: center;
+  width: 100% auto;
+}
+.logo2 a{
+  text-decoration: none;
+}
+.logo2 a h1 {
+  color: #fff;
+  font-size: 2.5em;
+  line-height: 1em;
+  font-weight: 750;
+}
+.logo2 a span {
+  color: #F8F8F8;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.modal-header .logo2:hover  a h1{
+  color: #e22b63;
+}
+.modal-header .logo2:hover a span{
+  color: #e22b63;
 }
 
 

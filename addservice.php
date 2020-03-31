@@ -1,7 +1,7 @@
 <?php 
 session_start();
 error_reporting(0);
-include('../../Database/dbconnection.php'); 
+include('Database/dbconnection.php'); 
 		$category = '';
 		$Result_Get_Category = mysqli_query($con,"SELECT category_id, category_Name FROM tblcategory ");
 		while($row = mysqli_fetch_array($Result_Get_Category)){
@@ -16,24 +16,23 @@ include('../../Database/dbconnection.php');
       <meta name="description" content="Volume Salon">
       <meta name="keywords" content="Volume, Volume, creative, html">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="../img/volume.png" rel="shortcut icon" /><!-- Favicon -->
-      <link rel="stylesheet" href="../../css/bootstrap.min.css" /><!-- Stylesheets -->
-      <link rel="stylesheet" href="../../css/font-awesome.min.css" />
-      <link rel="stylesheet" href="../../css/jquery-ui.min.css" />
-      <link rel="stylesheet" href="../../css/flaticon.css" />
-      <link rel="stylesheet" href="../../css/owl.carousel.css" />
-      <link rel="stylesheet" href="../../css/style.css" />
-      <link href="../../img/volume.png" rel="shortcut icon"/>
-      <link rel="stylesheet" type="text/css" href="../../css/cssprocess.css">
+      <link href="img/volume.png" rel="shortcut icon" /><!-- Favicon -->
+      <link rel="stylesheet" href="css/bootstrap.min.css" /><!-- Stylesheets -->
+      <link rel="stylesheet" href="css/font-awesome.min.css" />
+      <link rel="stylesheet" href="css/jquery-ui.min.css" />
+      <link rel="stylesheet" href="css/flaticon.css" />
+      <link rel="stylesheet" href="css/owl.carousel.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" type="text/css" href="css/cssprocess.css">
 	</head>
 <br>
 <body>
-	<?php include_once('../../includes/headerAccount.php'); ?>
-	<div class="container" data-setbg="../../img/download.jpg">
+	<?php include_once('includes/headerAccount.php'); ?>
+	<div class="container" data-setbg="img/download.jpg">
 				<div class="hs-item">
 					<div class="hs-content text-white">
 							<h4 class="fw-title"><i class="flaticon-039-make-up"></i>Add Service</h4>
-							<form class="fw-contact-form" action="../processofhomepage.php" method="POST" >
+							<form class="fw-contact-form" action="control/processofhomepage.php" method="POST" >
 							<br/>
 
    							<select name="category" id="category" class="form-control action" required="true"><!--cATEGORY CHOICE-->
@@ -58,20 +57,20 @@ include('../../Database/dbconnection.php');
 								<div class="cf-inputs"><br>
 									<textarea name="Message" class="form-control" placeholder="Your Message/Comments/Others"></textarea>
 								</div>
-								<a href="listAppoint.php"  class="site-btn sb-big">CANCEL</a>
+								<a href="./control/mainprocessreservation/listAppoint.php"  class="site-btn sb-big">CANCEL</a>
 								<button type="submit" name="submitreservation" class="site-btn">ADD</button>
 							</form>
 						</div>
-					<div class="hs-preview set-bg" data-setbg="../../img/sev.jpg"></div>
+					<div class="hs-preview set-bg" data-setbg="img/sev.jpg"></div>
 				</div>
 		</div>
 	<!--===== Javascripts & Jquery ======-->
-	<script src="../../js/jquery-3.2.1.min.js"></script>
-	<script src="../../js/jquery-ui.min.js"></script>
-	<script src="../../js/bootstrap.min.js"></script>
-	<script src="../../js/owl.carousel.min.js"></script>
-	<script src="../../js/circle-progress.min.js"></script>
-	<script src="../../js/main.js"></script>
-	<script src="../../js/javascriptprocess.js" ></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/circle-progress.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/javascriptprocess.js" ></script>
 </body>
 </html>
